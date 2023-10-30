@@ -46,9 +46,9 @@ function cargarClientes() {
                     <td>${cliente.domicilioCliente}</td>
                     <td>${cliente.correoCliente}</td>
                     <td>
-                        <button onclick="editarCliente('${cliente.idCliente}', '${cliente.nombreCliente}', '${cliente.apellidoCliente}', '${cliente.domicilioCliente}', '${cliente.correoCliente}')">Editar</button>
+                        <button onclick="editarCliente('${cliente.idCliente}', '${cliente.nombreCliente}', '${cliente.apellidoCliente}', '${cliente.domicilioCliente}', '${cliente.correoCliente}')" style="background-color:dodgerblue; color: aliceblue;">Editar</button>
                         
-                        <button onclick="eliminarCliente(${cliente.idCliente})">Eliminar</button>
+                        <button onclick="eliminarCliente(${cliente.idCliente})" style="background-color:rgb(201, 19, 46); color: aliceblue;">Eliminar</button>
                     </td>
                 `;
                 ClienteTable.appendChild(row);

@@ -3,82 +3,144 @@
 <head>
     <title>CRUD de cliente</title>
     <script src="./ajax.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/meanmenu.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/et-line-icon.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
+    <!-- Header Area Start -->
+    <header class="top">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-8">
+                        <div class="header-top-left">
+                            <p>CRUD CLIENTES</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="header-top-right text-end">
+                            <ul>
+                                <li><a style="color: white;">Mavi</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Area End -->
 
-    <h1>CRUD de cliente</h1>
-    
-    <!-- Formulario para agregar cliente -->
-    <form id="addClienteForm">
-        <input type="text" id="nombreCliente" placeholder="Nombre Cliente">
-        <input type="text" id="apellidoCliente" placeholder="Apellido Cliente">
-        <input type="text" id="domicilioCliente" placeholder="Domicilio Cliente">
-        <input type="text" id="correoCliente" placeholder="Email Cliente">
-        <button type="submit">Agregar Cliente</button>
-    </form>
+    <!-- CRUD-->
+    <div class="login-area pt-50 pb-150">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12 col-md-offset-3 text-center">
+                    <!-- Formulario para agregar cliente -->
+                    <form id="addClienteForm">
+                        <input type="text" id="nombreCliente" class="form-control" placeholder="Nombre Cliente">
+                        <input type="text" id="apellidoCliente" class="form-control" placeholder="Apellido Cliente">
+                        <input type="text" id="domicilioCliente" class="form-control" placeholder="Domicilio Cliente">
+                        <input type="email" id="correoCliente" class="form-control" placeholder="Email Cliente"> <br>
+                        <button type="submit" class="btn btn-success">Agregar Cliente</button>
+                    </form>
 
-    <!-- Tabla para mostrar cliente -->
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Domicilio</th>
-                <th>Email</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody id="ClienteTable"></tbody>
-    </table>
+                    <!-- Tabla para mostrar cliente -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Domicilio</th>
+                                <th>Email</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ClienteTable"></tbody>
+                    </table>
 
-    <!-- Formulario para editar un cliente  -->
-    <form id="editClienteForm" style="display: none;">
-        <label for="editClienteID">ID:</label>
-        <input type="text" id="eidCliente" readonly>
+                    <!-- Formulario para editar un cliente  -->
+                    <form id="editClienteForm" style="display: none;">
+                        <label for="editClienteID">ID:</label>
+                        <input type="text" id="eidCliente" readonly class="form-control">
 
-        <label for="editClienteNombre">Nombre:</label>
-        <input type="text" id="enombreCliente">
+                        <label for="editClienteNombre">Nombre:</label>
+                        <input type="text" id="enombreCliente" class="form-control">
 
-        <label for="editClienteApellido">Apellido:</label>
-        <input type="text" id="eapellidoCliente">
+                        <label for="editClienteApellido">Apellido:</label>
+                        <input type="text" id="eapellidoCliente" class="form-control">
 
-        <label for="editClienteDomicilio">Domicilio:</label>
-        <input type="text" id="edomicilioCliente">
+                        <label for="editClienteDomicilio">Domicilio:</label>
+                        <input type="text" id="edomicilioCliente" class="form-control">
 
-        <label for="editClienteEmail">Email:</label>
-        <input type="text" id="ecorreoCliente">
+                        <label for="editClienteEmail">Email:</label>
+                        <input type="text" id="ecorreoCliente" class="form-control">
 
-        <button type="submit">Actualizar Cliente</button>
-    </form>
+                        <button type="submit" class="btn btn-warning">Actualizar Cliente</button>
+                    </form>
 
-     <!-- Buscar del cliente -->
-    <form id="buscarClienteForm">
-        <input type="text" id="idClienteBuscar">
-        <button type="submit">Buscar</button>
-    </form>
-    
-    <!-- Detalles del cliente -->
-    <div id="ClienteDetails" style="display: none;">
-        <h2>Detalles del Libro</h2>
-        <p>ID: <span id="bidCliente"></span></p>
-        <p>Nombre: <span id="bnombreCliente"></span></p>
-        <p>Apellido: <span id="bapellidoCliente"></span></p>
-        <p>Domicilio: <span id="bdomicilioCliente"></span></p>
-        <p>Email: <span id="bcorreoCliente"></span></p>
+                    <!-- Buscar del cliente -->
+                    <form id="buscarClienteForm">
+                        <input type="text" class="form-control" id="idClienteBuscar">
+                        <button type="submit" class="btn btn-primary" >Buscar</button>
+                    </form>
+                    
+                    <!-- Detalles del cliente -->
+                    <div id="ClienteDetails" style="display: none;">
+                        <h2>Detalles del Libro</h2>
+                        <p>ID: <span id="bidCliente"></span></p>
+                        <p>Nombre: <span id="bnombreCliente"></span></p>
+                        <p>Apellido: <span id="bapellidoCliente"></span></p>
+                        <p>Domicilio: <span id="bdomicilioCliente"></span></p>
+                        <p>Email: <span id="bcorreoCliente"></span></p>
+                    </div>
+
+                    <!-- Login del cliente -->
+                    <!-- <form id="LoginClienteForm">
+                        <input type="text" id="email">
+                        <input type="text" id="clave">
+                        <button type="submit">Iniciar</button>
+                    </form> -->
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- CRUD-->
 
-    <!-- Login del cliente -->
-    <!-- <form id="LoginClienteForm">
-        <input type="text" id="email">
-        <input type="text" id="clave">
-        <button type="submit">Iniciar</button>
-    </form> -->
+    <!-- Footer Start -->
+    <footer class="footer-area">
+        <div class="footer-bottom text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p>Copyright © <a href="#">Agustín Arenas</a> 2023.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
 
-
+    <script src="js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="js/vendor/jquery-migrate-3.3.2.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.meanmenu.js"></script>
+    <script src="js/jquery.magnific-popup.js"></script>
+    <script src="js/ajax-mail.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.mb.YTPlayer.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
-
-
-
-
