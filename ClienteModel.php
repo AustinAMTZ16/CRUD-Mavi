@@ -41,7 +41,6 @@
             $query = "SELECT idCliente, nombreCliente, apellidoCliente, domicilioCliente, correoCliente FROM $this->table_cliente WHERE idCliente = ? ";
 
             $stmt = $this->conn->prepare($query);
-
             $stmt->bindParam(1, $this->idCliente);
             $stmt->execute();
 

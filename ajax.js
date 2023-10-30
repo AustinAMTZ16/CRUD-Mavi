@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Cargar registros al cargar la página
     cargarClientes();
 
-    // Manejar el envío del formulario de agregar
+    // Manejo del envío de los formularios 
     document.getElementById("addClienteForm").addEventListener("submit", function(e) {
         e.preventDefault();
         agregarCliente();
@@ -20,14 +20,14 @@ document.addEventListener("DOMContentLoaded", function() {
         leerCLiente(idC);
     });
 
-    document.getElementById("LoginClienteForm").addEventListener("submit", function(e) {
-        e.preventDefault();
-        const email = document.getElementById("email");
-        const clave = document.getElementById("clave");
-        const cemail = email.value;
-        const cclave = clave.value;
-        loginUsuario(cemail, cclave);
-    });
+    // document.getElementById("LoginClienteForm").addEventListener("submit", function(e) {
+    //     e.preventDefault();
+    //     const email = document.getElementById("email");
+    //     const clave = document.getElementById("clave");
+    //     const cemail = email.value;
+    //     const cclave = clave.value;
+    //     loginUsuario(cemail, cclave);
+    // });
 });
 
 function cargarClientes() {
@@ -54,7 +54,7 @@ function cargarClientes() {
                 ClienteTable.appendChild(row);
             });
         })
-        .catch(error => console.error('Error al cargar libros:', error));
+        .catch(error => console.error('Error al cargar cliente:', error));
 }
 
 function agregarCliente() {
@@ -82,7 +82,7 @@ function agregarCliente() {
             console.log(result.message);
             cargarClientes(); // Recargar la lista de libros después de agregar uno nuevo
         })
-        .catch(error => console.error('Error al agregar libro:', error));
+        .catch(error => console.error('Error al agregar cliente:', error));
 }
 
 function actualizarCliente() {
@@ -116,7 +116,7 @@ function actualizarCliente() {
         // Oculta el formulario configurando su estilo a "none"
         formulario.style.display = "none";
     })
-    .catch(error => console.error('Error al actualizar el libro:', error));
+    .catch(error => console.error('Error al actualizar el cliente:', error));
 }
 
 function eliminarCliente(idCliente) {
@@ -156,7 +156,7 @@ function leerCLiente(idCliente) {
 
             ClienteDetails.style.display = "block"; // Mostrar el div de detalles
         })
-        .catch(error => console.error('Error al cargar los detalles del libro:', error));
+        .catch(error => console.error('Error al cargar los detalles del cliente:', error));
 }
 
 function editarCliente(idCliente, nombreCliente, apellidoCliente, domicilioCliente, correoCliente) {

@@ -1,6 +1,6 @@
 <?php 
     include_once './Database.php';
-    include_once './ClienteMode.php';
+    include_once './ClienteModel.php';
 
     // Realiza la conexión a la base de datos
     $database = new Database();
