@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRUD de cliente</title>
+    <script src="./ajax.js"></script>
+</head>
+<body>
+
+    <h1>CRUD de cliente</h1>
+    
+    <!-- Formulario para agregar cliente -->
+    <form id="addClienteForm">
+        <input type="text" id="nombreCliente" placeholder="Nombre Cliente">
+        <input type="text" id="apellidoCliente" placeholder="Apellido Cliente">
+        <input type="text" id="domicilioCliente" placeholder="Domicilio Cliente">
+        <input type="text" id="correoCliente" placeholder="Email Cliente">
+        <button type="submit">Agregar Cliente</button>
+    </form>
+
+    <!-- Tabla para mostrar cliente -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Domicilio</th>
+                <th>Email</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="ClienteTable"></tbody>
+    </table>
+
+    <!-- Formulario para editar un cliente  -->
+    <form id="editClienteForm" style="display: none;">
+        <label for="editClienteID">ID:</label>
+        <input type="text" id="eidCliente" readonly>
+
+        <label for="editClienteNombre">Nombre:</label>
+        <input type="text" id="enombreCliente">
+
+        <label for="editClienteApellido">Apellido:</label>
+        <input type="text" id="eapellidoCliente">
+
+        <label for="editClienteDomicilio">Domicilio:</label>
+        <input type="text" id="edomicilioCliente">
+
+        <label for="editClienteEmail">Email:</label>
+        <input type="text" id="ecorreoCliente">
+
+        <button type="submit">Actualizar Cliente</button>
+    </form>
+
+     <!-- Buscar del cliente -->
+    <form id="buscarClienteForm">
+        <input type="text" id="idClienteBuscar">
+        <button type="submit">Buscar</button>
+    </form>
+    
+    <!-- Detalles del cliente -->
+    <div id="ClienteDetails" style="display: none;">
+        <h2>Detalles del Libro</h2>
+        <p>ID: <span id="bidCliente"></span></p>
+        <p>Nombre: <span id="bnombreCliente"></span></p>
+        <p>Apellido: <span id="bapellidoCliente"></span></p>
+        <p>Domicilio: <span id="bdomicilioCliente"></span></p>
+        <p>Email: <span id="bcorreoCliente"></span></p>
+    </div>
+
+    <!-- Login del cliente -->
+    <!-- <form id="LoginClienteForm">
+        <input type="text" id="email">
+        <input type="text" id="clave">
+        <button type="submit">Iniciar</button>
+    </form> -->
+
+
+</body>
+</html>
+
+
+
+
